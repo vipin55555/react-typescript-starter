@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import i18n from 'i18next'
+import { Suspense } from 'react';
+import { initReactI18next, useTranslation } from 'react-i18next';
+import translationEng from './translations/en-US.json';
+import translationHindi from './translations/hin-IN.json';
 
-function App() {
+i18n
+.use(initReactI18next)
+.init({
+  resources: {
+    en: { translation: translationEng },
+    hin: { translation: translationHindi }
+  },
+  lng: 'en',
+  fallbackLng: 'en',
+});
+
+const App = () => {
+  const { t } = useTranslation();
+  // i18n.changeLanguage('hin');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Suspense fallback='Loading ..'>
+    <div >
+    <h1>{t("label-hello")}</h1>
     </div>
+    </Suspense>
   );
 }
 
