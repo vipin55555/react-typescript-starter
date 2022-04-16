@@ -8,7 +8,9 @@ const AppFrame = (props: IAppFrameProps) => {
     return (
         <div>
             <Header/>
+            <br/>
             <Sidebar/>
+            <br/>
             {props.children}
         </div>
     )
