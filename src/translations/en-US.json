@@ -1,3 +1,4 @@
 {
-    "label-hello" : "Hello"
+    "label-hello" : "Hello",
+    "label-change-language":"Change language"
 }

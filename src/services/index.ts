@@ -11,3 +11,4 @@ const injectable = [
 export const ServiceInjector = ReflectiveInjector.resolveAndCreate(injectable);
 
 export * from './shared-service';
+export * from './utility-service';
