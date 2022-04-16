@@ -23,6 +23,7 @@ export const AppRoute = () => {
             <Route path="/test2" element={<PublicRoute isAuthorized={isAuthorized} />}>
                 <Route path="" element={<Test2 />} />
             </Route>
+            <Route path="*"element={<PublicRoute isAuthorized={isAuthorized} />}/> 
         </Routes>
     </BrowserRouter>)
 }
