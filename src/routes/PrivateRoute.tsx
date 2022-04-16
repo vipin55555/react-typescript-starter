@@ -1,6 +1,6 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { IRouteProps } from "./AppRoute"
 
 export const PrivateRoute = (props: IRouteProps) => {
-    return props.isAuthorized ? <Outlet /> : <Navigate to="/test2"/>;
+    return <>{props.isAuthorized ? props.children : <Navigate to="/publicTest" />}</>;
 }
