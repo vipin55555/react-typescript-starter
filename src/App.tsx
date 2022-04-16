@@ -1,19 +1,21 @@
 import i18n from 'i18next'
 import { Suspense } from 'react';
 import { initReactI18next, useTranslation } from 'react-i18next';
+import { ServiceContext } from './contexts';
+import { ServiceInjector } from './services';
 import translationEng from './translations/en-US.json';
 import translationHindi from './translations/hin-IN.json';
 
 i18n
-.use(initReactI18next)
-.init({
-  resources: {
-    en: { translation: translationEng },
-    hin: { translation: translationHindi }
-  },
-  lng: 'en',
-  fallbackLng: 'en',
-});
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: translationEng },
+      hin: { translation: translationHindi }
+    },
+    lng: 'en',
+    fallbackLng: 'en',
+  });
 
 const App = () => {
   const { t } = useTranslation();
@@ -21,9 +23,9 @@ const App = () => {
 
   return (
     <Suspense fallback='Loading ..'>
-    <div >
-    <h1>{t("label-hello")}</h1>
-    </div>
+      <ServiceContext.Provider value={ServiceInjector}>
+        <h1>{t("label-hello")}</h1>
+      </ServiceContext.Provider>
     </Suspense>
   );
 }
