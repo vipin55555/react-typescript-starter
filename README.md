@@ -3,9 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 It covers basic requirement needed for react typescript project such as:
-- Internationalization using [react-i18next]
-- Dependency Injection using [injection-js]
-- Routing using [react-router]
+- Internationalization using [react-i18next](https://github.com/i18next/react-i18next)
+- Dependency Injection using [injection-js](https://github.com/mgechev/injection-js)
+- Routing using [react-router](https://github.com/remix-run/react-router)
     - Lazy loading
     - Nested routing
 
