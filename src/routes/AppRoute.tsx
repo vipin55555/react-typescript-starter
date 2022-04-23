@@ -11,7 +11,7 @@ export interface IRouteProps extends RouteProps {
 
 export const AppRoute = () => {
     const isAuthorized: boolean = true;
-    return (<BrowserRouter>
+    return (
         <Routes>
             <Route path="/privateTest1" element={<PrivateRoute isAuthorized={isAuthorized}><PrivateTest1 /></PrivateRoute>}>
                 <Route path="nestedTest1" element={<PrivateNestedTest1 />} />
@@ -22,6 +22,5 @@ export const AppRoute = () => {
             <Route path="/publicTest" element={<PublicRoute isAuthorized={isAuthorized}><PublicTest /></PublicRoute>}>
             </Route>
             <Route path="*"element={<PublicRoute isAuthorized={isAuthorized} />} /> 
-        </Routes>
-    </BrowserRouter>)
+        </Routes>)
 }
